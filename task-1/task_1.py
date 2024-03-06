@@ -5,16 +5,16 @@
 
 from datetime import datetime
 
-try:
-    def dates(date: str) -> int:
-        user_input = datetime.strptime(date, "%Y.%m.%d")
-        now = datetime.now()
-        result = (now - user_input).days
-        return result
+try: 
+    def dates(date: str) -> int: # Функція приймає параметр у форматі рядка
+        giv_time = datetime.strptime(date, "%Y.%m.%d") # переводимо рядок-дату в об'єкт datetime
+        time_now = datetime.now() # теперішній час 
+        result = (time_now - giv_time).days # віднімаємо від теперішнього часу, вказаний час 
+        return result # повертаємо результат віднімання 
 
     # Введіть дату в форматі 'РРРР.ММ.ДД
-    result_func = dates("")
-    print(f"Минуло {result_func} днів")
+    result_func = dates("") # викликаємо функцію
+    print(f"Минуло {result_func} днів") # виводимо результат
 
 except Exception:
     print("Ви вказали невірний формат дати. будь ласка, введіть формат дати з прикладу")
