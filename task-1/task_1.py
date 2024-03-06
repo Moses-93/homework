@@ -13,7 +13,7 @@ try:
         return result # повертаємо результат віднімання 
 
     # Введіть дату в форматі 'РРРР.ММ.ДД
-    result_func = get_days_from_today("2001.12.14") # викликаємо функцію
+    result_func = get_days_from_today("") # викликаємо функцію
     print(f"Минуло {result_func} днів") # виводимо результат
 
 except Exception:
