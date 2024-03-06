@@ -6,14 +6,14 @@
 from datetime import datetime
 
 try: 
-    def dates(date: str) -> int: # Функція приймає параметр у форматі рядка
+    def get_days_from_today(date: str) -> int: # Функція приймає параметр у форматі рядка
         giv_time = datetime.strptime(date, "%Y.%m.%d") # переводимо рядок-дату в об'єкт datetime
-        time_now = datetime.now() # теперішній час 
+        time_now = datetime.today() # теперішній час 
         result = (time_now - giv_time).days # віднімаємо від теперішнього часу, вказаний час 
         return result # повертаємо результат віднімання 
 
     # Введіть дату в форматі 'РРРР.ММ.ДД
-    result_func = dates("") # викликаємо функцію
+    result_func = get_days_from_today("2001.12.14") # викликаємо функцію
     print(f"Минуло {result_func} днів") # виводимо результат
 
 except Exception:
