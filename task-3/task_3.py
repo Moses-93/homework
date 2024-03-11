@@ -11,8 +11,11 @@ raw_numbers = [
     "38050-111-22-22",
     "38050 111 22 11   ",
 ]
-
-regex = "[^0-9]" # регулярний вираз для символів, які ми хочемо видалити
-formated_phone_num = ["+38" + re.sub(regex, "", number.replace("38", "")) for number in raw_numbers] # Видаляємо непотрібні символи з кожного номера в списку, та додаємо +38
+try:
+    regex = "[^0-9]" # регулярний вираз для символів, які ми хочемо видалити
+    formated_phone_num = ["+38" + re.sub(regex, "", number.replace("38", "")) for number in raw_numbers] # Видаляємо непотрібні символи з кожного номера в списку, та додаємо +38
+except Exception:
+    print(f"Програма не може розпізнати ваш номер телефону!")
+    
 print(formated_phone_num)
 
